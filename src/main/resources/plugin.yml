@@ -4,3 +4,16 @@ main: me.Cyrendex.testingGrounds.TestingGrounds
 api-version: '1.21'
 authors: [ Cyrendex ]
 description: Experimenting with plugin development
+commands:
+    god:
+        description: Become invincible
+        usage: /<command>
+        aliases:
+          - godmode
+          - invincible
+          - invulnerable
+    feed:
+        description: Feed the player mmm yum
+        usage: /<command> [player]
+
+
