@@ -27,7 +27,7 @@ public final class TestingGrounds extends JavaPlugin {
         getServer().addRecipe(cursorRecipe);
 
         getServer().getPluginManager().registerEvents(new SnowballListener(),this);
-        getServer().getPluginManager().registerEvents(new CursorListener(), this);
+        getServer().getPluginManager().registerEvents(new CursorListener(this), this);
     }
 
     @Override
