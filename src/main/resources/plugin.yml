@@ -7,6 +7,8 @@ description: Experimenting with plugin development
 commands:
     god:
         description: Become invincible
+        permission: TestingGrounds.god
+        permission-message: You haven't attained godhood.
         usage: /<command>
         aliases:
           - godmode
@@ -14,6 +16,22 @@ commands:
           - invulnerable
     feed:
         description: Feed the player mmm yum
+        permission: TestingGrounds.feed
+        permission-message: You don't have the culinary skills to make something edible.
         usage: /<command> [player]
-
+    peek:
+        description: Peek at the held item's data
+        permission: TestingGrounds.peek
+        permission-message: Your eyes aren't sharp enough to properly appraise items.
+        usage: /<command>
+permissions:
+    TestingGrounds.god:
+        description: Allows someone to run the /god command
+        default: op
+    TestingGrounds.feed:
+        description: Allows someone to run the /feed [player] command
+        default: op
+    TestingGrounds.peek:
+        description: Allows someone to run the /peek command
+        default: op
 

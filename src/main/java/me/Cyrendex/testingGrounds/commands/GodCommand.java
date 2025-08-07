@@ -10,17 +10,23 @@ public class GodCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
-        if (!(commandSender instanceof Player)) return true;
 
-        Player player = (Player) commandSender;
+        if (commandSender.hasPermission("TestingGrounds.god")) {
+            if (!(commandSender instanceof Player)) return true;
 
-        if (player.isInvulnerable()) {
-            player.setInvulnerable(false);
-            player.sendMessage(ChatColor.RED + "You are no longer invulnerable.");
+            Player player = (Player) commandSender;
+
+            if (player.isInvulnerable()) {
+                player.setInvulnerable(false);
+                player.sendMessage(ChatColor.RED + "You are no longer invulnerable.");
+            } else {
+                player.setInvulnerable(true);
+                player.sendMessage(ChatColor.GREEN + "You are now invulnerable.");
+            }
         } else {
-            player.setInvulnerable(true);
-            player.sendMessage(ChatColor.GREEN + "You are now invulnerable.");
+            commandSender.sendMessage(ChatColor.BOLD + "You haven't attained" + ChatColor.YELLOW + "godhood.");
         }
+
 
         return true;
     }
